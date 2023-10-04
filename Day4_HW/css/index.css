@@ -1,0 +1,108 @@
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+fieldset,
+img,
+input,
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline-style: none;
+}
+body {
+  background-color: #ccc;
+  background-image: url('../img/background.jpg');
+  background-repeat: repeat-x;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  margin: 0px auto;
+  width: 1000px;
+  height: 250px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main {
+  margin: 0px auto;
+  width: 960px;
+}
+.post{
+  background: #fff;
+  float: left;
+  width: 650px;
+}
+.post ul{
+  margin: 50px 25px;
+}
+.post ul li{
+  list-style: none;
+}
+.postTitle{
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.postText{
+  font-size: 1em;
+  line-height: 140%;
+  margin: 20px auto;
+}
+.postTime{
+  border-top-style: dotted;
+  border-bottom-style: solid;
+  padding: 10px 0px;
+}
+.orange{
+  color: orange;
+}
+.right{
+  background: #fff;
+  float: right;
+  width: 290px;
+}
+.right ul{
+  margin: 35px 36px;
+}
+.right ul li{
+  padding: 5px 0px;
+  list-style: none;
+}
+
+.footer{
+  margin: 0px auto;
+  width: 960px;
+}
+.footer ul{
+  margin: 20px auto;
+  width: 200px;
+  height: 120px;
+}
+.footer ul li{
+  list-style: none;
+  float: left;
+  width: 42px;
+  height: 42px;
+  padding: 34px 5px;
+}

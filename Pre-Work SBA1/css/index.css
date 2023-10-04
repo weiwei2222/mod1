@@ -1,0 +1,79 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;} 
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+.header{position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: bisque;
+    text-align: center;
+}
+.orderbtn{
+    background-color: #7bc3b0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.orderbtn a{
+    padding: 10px 20px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+}
+.orderbtn a:hover{
+    display: block;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #40b868;
+    border-radius: 10px;
+}
+
+.main{
+    width: auto;
+    padding: 50px 0px;
+    font-size: larger;
+    line-height: 40px;
+    color: #6c1717;
+    display: flex;
+}
+.nav{width: 20%;
+    background-color: rgb(214, 214, 214);
+    display: inline-block;
+}
+.nav ul li{
+    list-style: none;
+    width: auto;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: #b33f3f;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:0px 30px;
+}
+.nav ul li a:hover{
+    display: block;
+    background-color: aliceblue;
+    color: #b33f3f;
+    
+}
+.section{
+    margin: 0px 0px 0px 50px;
+}
+.main img {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+.aside{
+    background: #eee;
+}
+.footer{position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(165, 238, 176);
+    text-align: center;
+}
