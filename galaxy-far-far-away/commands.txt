@@ -1,4 +1,0 @@
-mkdir - creates a folder
-cd 
-cd ..
-touch

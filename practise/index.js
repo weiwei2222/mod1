@@ -56,10 +56,10 @@
 //     console.log(friends[i])
 // }
 
-// let friends = ["James","Lily","Jack","Randy"]
-// for (let i = friends.length-1; i >= 0; i --){
-//     console.log(friends[i])
-// }
+let friends = ["James","Lily","Jack","Randy"]
+for (let i = friends.length-1; i >= 0; i --){
+    console.log(friends[i])
+}
 
 let age = [24,5,19,57]
 for (let i = age.length-1; i >= 0; i --){
