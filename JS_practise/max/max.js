@@ -20,7 +20,7 @@ const calmax = function(usernumber){
             minNumber = usernumber[i];
         }
     }
-    console.log(maxNumber,minNumber);
+    console.log(maxNumber - minNumber);
 }
 
-calmax(number)
+const difference = calmax(number)
