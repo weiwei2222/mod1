@@ -26,14 +26,20 @@
 //     }
 // }
 
-for (let i = 2; i < 20; i ++){
-    sum = true;
-    for (j=2; j<i; j++){
-        if (i%j == 0){
-            sum = false;
-        }
-    }
-    if (sum){
-            console.log(i);
+// for (let i = 2; i < 20; i ++){
+//     sum = true;
+//     for (j=2; j<i; j++){
+//         if (i%j == 0){
+//             sum = false;
+//         }
+//     }
+//     if (sum){
+//             console.log(i);
+//     }
+// }
+
+for (counter =2; counter <=20; counter++){
+    if (counter % 2 != 0 && counter % counter == 0 && counter % 3 != 0 ){
+            console.log(counter + " " + "Prime")
     }
 }
