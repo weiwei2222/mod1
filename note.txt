@@ -1,0 +1,28 @@
+
+
+1 Function Declaration (AKA Function Definitions)
+function sayHello(name) {
+    console.log('Hello ' + name + '!');
+}
+
+2 Function Expression
+const sayHello = function(name) {
+    console.log('Hello ' + name + '!');
+};
+
+3 Arrow Function
+const add = (a, b) => a + b;
+
+
+// Function Declaration
+function add(a, b) {
+	return a + b;
+}
+// Arrow Function
+const add = (a, b) => a + b;
+
+// Passing an Anonymous Function
+var a = ['red', 'green', 'blue'];
+a.forEach(function(color) {
+  console.log(color);
+});
