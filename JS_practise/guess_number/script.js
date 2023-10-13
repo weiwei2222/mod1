@@ -10,7 +10,7 @@ let hightscore = 0;
 
 document.querySelector(".check").addEventListener("click",function(){
     let guessnumber = document.querySelector(".guess").value;
-    console.log(guessnumber, typeof guessnumber);
+    console.log(guessnumber,typeof guessnumber);
     if (score > 0){
         if(guessnumber == ""){
             document.querySelector(".message").textContent = "Please in a number.";
