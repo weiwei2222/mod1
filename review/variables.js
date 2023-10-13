@@ -53,5 +53,5 @@ let student ={
 // console.log(y, typeof y)
 // console.log(fruit,typeof fruit)
 // console.log(numberlist, typeof numberlist)
-console.log(student,typeof student)
+console.log(student.name,typeof student.name)
 console.log(`His name is ${student.name},his age is ${student.age},his score is ${student.score}!`)
