@@ -4,20 +4,37 @@ const btnRoll = document.querySelector(".btn--roll")//object
 const dicPicture = document.querySelector(".dice");//object
 dicPicture.classList.add("hidden")
 
-const player0_currentscore = document.getElementById("current--0");//object
-const player1_currentscore = document.getElementById("current--1");//object
+
+const player0 = document.querySelector(".player--0");
+const player1 = document.querySelector(".player--1");
+
+
+const player_currentscore = [];
+player_currentscore[0] = document.getElementById("current--0");//object
+player_currentscore[1] = document.getElementById("current--1");//object
 const btnhold = document.querySelector(".btn--hold")
 
-const player0_score = document.getElementById("score--0");//object
-const player1_score = document.getElementById("score--1");//object
-let player0_number =Number(player0_score.textContent); //number
-let player1_number =Number(player1_score.textContent);
+const player_score = [];
+player_score[0] = document.getElementById("score--0");//object
+player_score[1] = document.getElementById("score--1");//object
 
-const activePlayer = document.getElementsByClassName(".player--active");
-console.log(activePlayer, typeof activePlayer)
+
+// const activePlayer = document.getElementsByClassName(".player--active");
 
 let currentscore = 0;
-console.log(currentscore,typeof currentscore)
+let activePlayer = 0;
+
+const updatePlayer = function() {
+    
+    // 0 -> 0 + 1 = 1 -> 1 % 2 = 1
+    // 1 -> 1 + 1 = 2 -> 2 % 2 = 0
+    activePlayer = (activePlayer + 1) % 2;
+    currentscore = 0;
+    // Update `.player--active` class on new active player.
+    player0.classList.toggle("player--active");
+    player1.classList.toggle("player--active");
+}
+
 btnRoll.addEventListener("click",function(){
     let dicnumber = Math.trunc(Math.random() * 6 +1);
     console.log(dicnumber)
@@ -25,14 +42,17 @@ btnRoll.addEventListener("click",function(){
     dicPicture.src = `dice-${dicnumber}.png`;
     if (dicnumber !== 1){
         currentscore += dicnumber;
-        player0_currentscore.textContent = currentscore;
-    }else{
+        player_currentscore[activePlayer].textContent = currentscore;
+        player_score[activePlayer] += currentscore;
+        // player_score[activePlayer].textContent = player_score[activePlayer];
         
+    }else{
+        updatePlayer()
     }
 })
 
 btnhold.addEventListener("click",function(){
-    player0_number += currentscore;
-    player0_score.textContent = player0_number;
-
+    player_number += currentscore;
+    playerNumber[activePlayer].textContent = player_number;
+    updatePlayer()
 })
