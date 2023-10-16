@@ -25,11 +25,12 @@ let currentscore = 0;
 let activePlayer = 0;
 
 const updatePlayer = function() {
-    
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
     // 0 -> 0 + 1 = 1 -> 1 % 2 = 1
     // 1 -> 1 + 1 = 2 -> 2 % 2 = 0
     activePlayer = (activePlayer + 1) % 2;
     currentscore = 0;
+    
     // Update `.player--active` class on new active player.
     player0.classList.toggle("player--active");
     player1.classList.toggle("player--active");
