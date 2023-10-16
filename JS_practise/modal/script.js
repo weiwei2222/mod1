@@ -21,5 +21,5 @@ for (let i = 0; i < btnmodal.length; i ++){
 }
 
 btnclose.addEventListener("click",closeup)
-
 overlay.addEventListener("click",closeup)
+document.addEventListener("keydown",closeup)

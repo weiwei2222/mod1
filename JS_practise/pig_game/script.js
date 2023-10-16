@@ -4,22 +4,17 @@ const btnRoll = document.querySelector(".btn--roll")//object
 const dicPicture = document.querySelector(".dice");//object
 dicPicture.classList.add("hidden")
 
-
 const player0 = document.querySelector(".player--0");
 const player1 = document.querySelector(".player--1");
-
-
-const player_currentscore = [];
-player_currentscore[0] = document.getElementById("current--0");//object
-player_currentscore[1] = document.getElementById("current--1");//object
-const btnhold = document.querySelector(".btn--hold")
 
 const player_score = [];
 player_score[0] = document.getElementById("score--0");//object
 player_score[1] = document.getElementById("score--1");//object
 
-
-// const activePlayer = document.getElementsByClassName(".player--active");
+const player_currentscore = [];
+player_currentscore[0] = document.getElementById("current--0");//object
+player_currentscore[1] = document.getElementById("current--1");//object
+const btnhold = document.querySelector(".btn--hold")
 
 let currentscore = 0;
 let activePlayer = 0;
