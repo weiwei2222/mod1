@@ -2,7 +2,7 @@
 
 const btnRoll = document.querySelector(".btn--roll")//object
 const dicPicture = document.querySelector(".dice");//object
-dicPicture.classList.add("hidden")
+dicPicture.classList.add("hidden");
 
 const player = [];
 player[0] = document.querySelector(".player--0");
@@ -11,17 +11,38 @@ player[1] = document.querySelector(".player--1");
 const player_score = [];
 player_score[0] = document.getElementById("score--0");//object
 player_score[1] = document.getElementById("score--1");//object
-const player_number = [];
+let player_number = [];
 player_number[0] = Number(player_score[0].textContent);
 player_number[1] = Number(player_score[1].textContent);
 
 const player_currentscore = [];
 player_currentscore[0] = document.getElementById("current--0");//object
 player_currentscore[1] = document.getElementById("current--1");//object
-const btnhold = document.querySelector(".btn--hold")
+const btnhold = document.querySelector(".btn--hold");
+const newGame = document.querySelector(".btn--new");
+console.log(newGame, typeof newGame)
 
 let currentscore = 0;
 let activePlayer = 0;
+let playing = true;
+
+newGame.addEventListener("click",function(){
+    playing = true;
+    console.log("new")
+    currentscore = 0;
+    activePlayer = 0;
+    player_score[0].textContent = 0;
+    player_score[1].textContent = 0;
+    player_number[0] = 0;
+    player_number[1] = 0;
+    player_currentscore[0].textContent = 0;
+    player_currentscore[1].textContent = 0;
+    player[0].classList.remove("player--winner");
+    player[1].classList.remove("player--winner");
+    dicPicture.classList.add("hidden");
+    player[0].classList.add("player--active");
+    player[1].classList.remove("player--active");
+})
 
 const updatePlayer = function() {
     document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -36,26 +57,37 @@ const updatePlayer = function() {
 }
 
 btnRoll.addEventListener("click",function(){
-    let dicnumber = Math.trunc(Math.random() * 6 +1);
-    console.log(dicnumber)
-    dicPicture.classList.remove("hidden")
-    dicPicture.src = `dice-${dicnumber}.png`;
-    if (player_number[activePlayer] >= 100){
-        player[activePlayer].classList.remove("player--active");
-        player[activePlayer].classList.add("player--winner");
-    }else{
-        if (dicnumber !== 1 ){
+    if (playing){
+        let dicnumber = Math.trunc(Math.random() * 6 +1);
+        console.log(dicnumber)
+        dicPicture.classList.remove("hidden")
+       dicPicture.src = `dice-${dicnumber}.png`;
+       if (dicnumber !== 1 ){
             currentscore += dicnumber;
             player_currentscore[activePlayer].textContent = currentscore;
-        }else{
+            if (player_number[activePlayer] >= 20){
+                playing = false;
+                player[activePlayer].classList.remove("player--active");
+                player[activePlayer].classList.add("player--winner");
+                dicPicture.classList.add("hidden")
+            }
+       }else{
             updatePlayer()
-        }
+      }
     }
-    
 })
 
 btnhold.addEventListener("click",function(){
-    player_number[activePlayer] += currentscore;
-    player_score[activePlayer].textContent = player_number[activePlayer];
-    updatePlayer()
+    if (playing){
+        player_number[activePlayer] += currentscore;
+        player_score[activePlayer].textContent = player_number[activePlayer];
+        if (player_number[activePlayer] >= 20){
+            playing = false;
+            player[activePlayer].classList.remove("player--active");
+            player[activePlayer].classList.add("player--winner");
+            dicPicture.classList.add("hidden")
+        }
+        updatePlayer()
+    }
 })
+
