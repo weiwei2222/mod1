@@ -26,3 +26,34 @@ var a = ['red', 'green', 'blue'];
 a.forEach(function(color) {
   console.log(color);
 });
+
+
+// let a = 5 + 2; // 7 number
+// let b = "5" + 2; // 52 string
+// let c = 5 + "2"; // 52 string
+// let d = "hello" + 2; // hello2 string
+// console.log(a,b,c,d)  
+
+// let a = 5 - 2;    // 3 number
+// let b = "5" - 2;  // 3 number
+// let c = 5 - "2";  // 3 number
+// let d = "hello" - 2; //NaN
+// console.log(a,b,c,d)
+
+// let a = 5 * 2;    // 10 number
+// let b = "5" * 2;  // 10 number
+// let c = 5 * "2";  // 10 number
+// let d = "hello" * 2; //NaN
+// console.log(a,b,c,d) 
+
+// let a = 5 / 2;    // 2.5 number
+// let b = "5" / 2;  // 2.5 number
+// let c = 5 / "2";  // 2.5 number
+// let d = "hello" / 2; //NaN
+// console.log(a,b,c,d) 
+
+// let a = 5 % 2;    // 1 number
+// let b = "5" % 2;  // 1 number
+// let c = 5 % "2";  // 1 number
+// let d = "hello" % 2; //NaN
+// console.log(a,b,c,d) 
