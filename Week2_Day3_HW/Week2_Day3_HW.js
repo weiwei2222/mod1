@@ -30,8 +30,8 @@ for (let i = 0; i < synonyms.length; i ++){
 // 'Have a wonderful day!'
 // 'Have a great day!'
 // ADD CODE HERE
-for (let i = 0; i < synonyms.length; i ++){
-    console.log(`Have a ${synonyms[i]} day!`)
+for (let i = 0; i < greetings.length; i ++){
+    console.log(`Have a ${greetings[i]} day!`)
 }
 
 
