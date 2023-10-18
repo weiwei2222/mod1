@@ -13,4 +13,3 @@ console.log(player0_currentscore,typeof player0_currentscore)
 console.log(player1_currentscore.textContent, typeof player1_currentscore.textContent)//string
 console.log(btnRoll, typeof btnRoll)//string
 console.log(dicPicture, typeof dicPicture)//object
-
