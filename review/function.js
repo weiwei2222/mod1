@@ -5,7 +5,6 @@
 // }
 
 // let name = "Weiwei"
-
 // let sayhello = function(name){
 //     console.log("hello "+ name + "!")
 // }
@@ -45,3 +44,52 @@
 // });
 // a.forEach(color => console.log(color))
 
+// function isVowel(letter){
+//     letter = letter.toLowerCase();
+//     if (letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"){
+//         console.log("it is true")
+//     }else{
+//         console.log("it is false")
+//     }
+// }
+// isVowel("B")
+
+// function getMultipleLengths(str){
+//     let retArr = []
+//     for (let i = 0; i < str.length; i ++){
+//         retArr.push(str[i].length);
+//     }
+//     return retArr;
+// }
+// console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
+
+
+
+// function maxOfThree(usernumber){
+//     let maxNumber = usernumber[0];
+//     let minNumber = usernumber[0];
+//     for (let i = 1; i < usernumber.length; i ++){
+//         let currentnumber = usernumber[i];
+//         if (currentnumber > maxNumber){
+//             maxNumber = usernumber[i];
+//         }
+//         if (currentnumber < minNumber ){
+//             minNumber = usernumber[i];
+//         }
+//     }
+//     console.log(maxNumber, minNumber);
+// }
+// maxOfThree([6, 9, 1, 3]);
+
+
+function printLongestWord(arr) {
+    let word = "";
+    for (let i = 0; i < arr.length; i++) {
+      if (word.length < arr[i].length) {
+        word = arr[i];
+      }
+    }
+    return word;
+}
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));

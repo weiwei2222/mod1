@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Challenge: For Loops
 // Using a for loop, decrement countDown by one each time the loop runs until it equals 0,
 // making use of looping functionality instead of logging each number separately.
@@ -9,7 +8,6 @@ for (let i = 0; i < 10; i ++){
   countDown --
 }
 console.log(countDown)
-
 
 
 
@@ -37,7 +35,6 @@ for (let i = 0; i < greetings.length; i ++){
 
 
 
-
 // Challenge: For Loops and Array Indices
 const firstNames = ["Jon", "Arya", "Jamie"];
 const lastNames = ["Snow", "Stark", "Lannister"];
@@ -55,9 +52,6 @@ for (let i = 0; i < firstNames.length; i ++){
     }
 }
 console.log(bios)
-
-
-
 
 
 

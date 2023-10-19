@@ -31,15 +31,50 @@
 // weiwei.hairColor = "red";
 // console.log(weiwei)
 
-const obj = {
-	salutation: 'hi',
-	count:4,
-    usercount:3,
+// const obj = {
+// 	salutation: 'hi',
+// 	count:4,
+//     usercount:3,
+// }
+// if (obj.salutation === "hi") {
+// 	console.log('ok');
+// }
+
+// for (let i = 0; i < obj.usercount; i++) {
+// 	console.log(i);
+// }
+
+const user = {
+	name:"Weiwei",
+	email:"linweiwei2222@gamil.com",
+	age:38,
+	purchased:[],
 }
-if (obj.salutation === "hi") {
-	console.log('ok');
+user.class = "TWOC";
+user.purchased.push("car","toy","hat","fruit")
+user.purchased[1] = "skincare";
+user.friend = {
+	name:"Grace",
+	age:43,
+	location:"Columbus",
+	purchased:[],
+}
+// user.friend.purchased.push("shoes","bread")
+
+let friendpur = user.friend.purchased.length;
+for (let i = 0; i < friendpur; i ++){
+	console.log(user.friend.purchased[i]);
 }
 
-for (let i = 0; i < obj.usercount; i++) {
-	console.log(i);
+// function updateUser(){
+// 	user.age ++;
+// 	user.name = user.name.toUpperCase();
+// }
+// updateUser();
+
+function oldAndLoud(person){
+	person.age ++ ;
+	person.name = person.name.toUpperCase();
 }
+oldAndLoud(user);
+console.log(user)
