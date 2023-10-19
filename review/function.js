@@ -65,31 +65,41 @@
 
 
 
-
-// function maxOfThree(usernumber){
-//     let maxNumber = usernumber[0];
-//     let minNumber = usernumber[0];
-//     for (let i = 1; i < usernumber.length; i ++){
-//         let currentnumber = usernumber[i];
-//         if (currentnumber > maxNumber){
-//             maxNumber = usernumber[i];
-//         }
-//         if (currentnumber < minNumber ){
-//             minNumber = usernumber[i];
+// find biggest number in Array
+// function maxOfThree(userNumber){
+//     let maxNumber = userNumber[0];
+//     for (let i = 1; i < userNumber.length; i ++){
+//         let currentNumber = userNumber[i];
+//         if (currentNumber > maxNumber){
+//             maxNumber = userNumber[i];
 //         }
 //     }
-//     console.log(maxNumber, minNumber);
+//     console.log(maxNumber);
 // }
-// maxOfThree([6, 9, 1, 3]);
+// maxOfThree([6, 19, 1, 19]);
 
 
-function printLongestWord(arr) {
-    let word = "";
-    for (let i = 0; i < arr.length; i++) {
-      if (word.length < arr[i].length) {
-        word = arr[i];
-      }
-    }
-    return word;
+
+function maxOfThree(a, b, c){
+  if (a > b && a > c){
+    console.log(a)
+  }else if (b > a && b > c){
+    console.log(b)
+  }else{
+    console.log(c);
+  }
 }
-console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+maxOfThree(6, 19, 1);
+
+
+
+// function printLongestWord(arr) {
+//     let word = "";
+//     for (let i = 0; i < arr.length; i++) {
+//       if (word.length < arr[i].length) {
+//         word = arr[i];
+//       }
+//     }
+//     return word;
+// }
+// console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
