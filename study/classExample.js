@@ -12,4 +12,6 @@ class Animal{
 
 
 const newAnimal = new Animal("cow",4,false,true,true)
-console.log(newAnimal);
+console.log(newAnimal,typeof newAnimal);
+const newBird = new Animal("robin",2,false,0,true,)
+console.log(newBird)

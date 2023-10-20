@@ -43,6 +43,6 @@ const v1 = new Vehicle('12345', 'honda','accord');
 // const v2 = new Vehicle('toyota', '323456');
 const v2 = new Vehicle('323456', 'toyota','accord2');
 v2.start();
-console.log(v2.toString());
+console.log(v2.toString(), typeof v2.toString());
 const newCar = new Vehicle('234324', 'bmw');
 newCar.stop();
