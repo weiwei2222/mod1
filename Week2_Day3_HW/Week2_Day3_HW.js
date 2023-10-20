@@ -34,7 +34,6 @@ for (let i = 0; i < greetings.length; i ++){
 
 
 
-
 // Challenge: For Loops and Array Indices
 const firstNames = ["Jon", "Arya", "Jamie"];
 const lastNames = ["Snow", "Stark", "Lannister"];
