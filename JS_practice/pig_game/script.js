@@ -20,7 +20,6 @@ player_currentscore[0] = document.getElementById("current--0");//object
 player_currentscore[1] = document.getElementById("current--1");//object
 const btnhold = document.querySelector(".btn--hold");
 const newGame = document.querySelector(".btn--new");
-console.log(newGame, typeof newGame)
 
 let currentscore = 0;
 let activePlayer = 0;
@@ -46,8 +45,8 @@ newGame.addEventListener("click",function(){
 
 const updatePlayer = function() {
     document.getElementById(`current--${activePlayer}`).textContent = 0;
-    // 0 -> 0 + 1 = 1 -> 1 % 2 = 1
-    // 1 -> 1 + 1 = 2 -> 2 % 2 = 0
+    // 0 -> 0+1 = 1 -> 1%2 = 1
+    // 1 -> 1+1 = 2 -> 2%2 = 0
     activePlayer = (activePlayer + 1) % 2;
     currentscore = 0;
     
@@ -65,12 +64,13 @@ btnRoll.addEventListener("click",function(){
        if (dicnumber !== 1 ){
             currentscore += dicnumber;
             player_currentscore[activePlayer].textContent = currentscore;
-            if (player_number[activePlayer] >= 20){
-                playing = false;
-                player[activePlayer].classList.remove("player--active");
-                player[activePlayer].classList.add("player--winner");
-                dicPicture.classList.add("hidden")
-            }
+            // if (player_number[activePlayer] >= 20){
+            //     playing = false;
+            //     player[activePlayer].classList.remove("player--active");
+            //     player[activePlayer].classList.add("player--winner");
+            //     dicPicture.classList.add("hidden")
+            //     player_score[activePlayer].textContent = 'Win!'
+            // }
        }else{
             updatePlayer()
       }
@@ -86,6 +86,7 @@ btnhold.addEventListener("click",function(){
             player[activePlayer].classList.remove("player--active");
             player[activePlayer].classList.add("player--winner");
             dicPicture.classList.add("hidden")
+            player_score[activePlayer].textContent = 'Win!'
         }
         updatePlayer()
     }
