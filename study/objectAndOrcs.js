@@ -60,18 +60,25 @@ class Character {
       this.lovesDogs = lovesDogs || false;
     }
     greet (otherCharacter) {
-      console.log('hi ' + otherCharacter + '!');
+        console.log('hi ' + otherCharacter + '!');
+    }
+    classyGreeting (otherClassyCharacter) {
+        console.log('Greetings ' + otherClassyCharacter.name + '!');
+    }
+    setHair (hairColor) {
+        this.hair = hairColor;
     }
     smite () {
-      console.log('I smite thee you vile person');
+        console.log('I smite thee you vile person');
     }
 }
 const you = new Character('Cathy the Miraculous', 29, 'brown', 'locs of dark brown', true, true);
 const me = new Character('Arthur the Wavy', 32, 'brown', 'his waves be spinnin keep of the g for greatness');
-console.log(you);
-console.log(me)
+// console.log(you);
+// console.log(me)
 
 // me.greet("you");
 // me.smite();
-// you.greet("me");
+you.greet("Lily");
 // you.smite();
+you.classyGreeting(me);
