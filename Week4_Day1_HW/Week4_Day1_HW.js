@@ -70,3 +70,36 @@ for(let i =0; i < 9; i++){
 }
 mark.buyHamster(lucky)
 console.log(mark)
+
+
+
+
+// Chef should be a factory of Dinner
+// Add a constructor to dinner that sets the string properties, appetizer, entree and dessert.
+// Add a method on chef that takes three arguments and returns a new Dinner based on those arguments.
+// Have the Chef create 3 dinners, log the dinners
+class Dinner {
+    constructor(appetizer,entree,dessert){
+        this.appetizer = appetizer;
+        this.entree = entree;
+        this.dessert = dessert;
+    }
+    cook(){
+       console.log(`Dinner is served ${this.appetizer},${this.entree} and ${this.dessert}`)
+    }
+}
+
+class Chef {
+    constructor(name,cook){
+        this.name = name;
+        this.cook = cook;
+    }
+    cookDinner(Dinner){
+        this.cookDinner = Dinner.cook();
+        return this.cookDinner;
+    }
+}
+const dinner1 = new Dinner('bread','pizza','cheesecake')
+const dinner2 = new Dinner('salad','fried chicken','ice cream')
+const dinner3 = new Dinner('soup','sandwich','Strawberry Cake')
+const todaychef = new Chef(dinner1)
