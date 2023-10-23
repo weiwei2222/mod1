@@ -22,11 +22,8 @@ function showSlides() {
 
 for (let i = 0; i < dots.length; i++) {
     dots[i].addEventListener('click', function(){
-            slides[i].style.display = "block";
-            slides[slideIndex-1].style.display = "none";
-            slides[slideIndex+1].style.display = "none";
-            dots[i].className += " active";
-        
-        
+        slides[i].style.display = "block";
+        slides[slideIndex-1].style.display = "none";
+        dots[i].className += " active";
     });
  }
