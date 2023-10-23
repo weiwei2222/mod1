@@ -1,10 +1,9 @@
 'use strict';
-
+let slideIndex = 0;
 showSlides();
 
 function showSlides() {
     let i = 0;
-    let slideIndex = 0;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
     for (i = 0; i < slides.length; i++) {
@@ -19,5 +18,5 @@ function showSlides() {
     };
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 2000); // 切换时间为 2 秒
+    setTimeout(showSlides, 2000); 
 }
