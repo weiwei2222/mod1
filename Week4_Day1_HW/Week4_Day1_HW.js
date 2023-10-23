@@ -84,22 +84,23 @@ class Dinner {
         this.entree = entree;
         this.dessert = dessert;
     }
-    cook(){
-       console.log(`Dinner is served ${this.appetizer},${this.entree} and ${this.dessert}`)
-    }
 }
 
 class Chef {
-    constructor(name,cook){
+    constructor(name){
         this.name = name;
-        this.cook = cook;
+        this.dinners = [];
     }
     cookDinner(Dinner){
-        this.cookDinner = Dinner.cook();
-        return this.cookDinner;
+        this.dinners = Dinner;
+        // return this.dinners;
+        console.log(`Dinner is served.It is ${this.dinners.appetizer},${this.dinners.entree} and ${this.dinners.dessert}.Enjoy!`)
     }
 }
 const dinner1 = new Dinner('bread','pizza','cheesecake')
 const dinner2 = new Dinner('salad','fried chicken','ice cream')
 const dinner3 = new Dinner('soup','sandwich','Strawberry Cake')
-const todaychef = new Chef(dinner1)
+const jack = new Chef('Jack');
+jack.cookDinner(dinner1)
+jack.cookDinner(dinner2)
+jack.cookDinner(dinner3)
