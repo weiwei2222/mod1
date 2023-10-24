@@ -44,18 +44,18 @@ class Person{
         console.log(`Hello, I am ${this.name}.`)
     }
     eat(){
-        this.weight++
-        this.mood++
+        this.weight++;
+        this.mood++;
     }
     exercise(){
-        this.weight--
+        this.weight--;
     }
     ageUp(){
-        this.age++
-        this.height++
-        this.weight++
-        this.mood--
-        this.bankAccount+=10
+        this.age++;
+        this.height++;
+        this.weight++;
+        this.mood--;
+        this.bankAccount+=10;
     }
     buyHamster(hamster){
         this.hamsters.push(hamster);
