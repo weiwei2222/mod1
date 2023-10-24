@@ -11,7 +11,6 @@ console.log(countDown)
 
 
 
-
 // Challenge: For Loops and Arrays
 const synonyms = ['fantastic', 'wonderful', 'great'];
 const greetings = [];
@@ -51,8 +50,6 @@ for (let i = 0; i < firstNames.length; i ++){
     }
 }
 console.log(bios)
-
-
 
 
 
