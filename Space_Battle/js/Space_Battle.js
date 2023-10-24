@@ -56,9 +56,15 @@ for (let i = 0; i < 6; i ++){
 	alienships.push(alien);
 }
 
-
+let playing = true;
 attackbtnEl.addEventListener("click",function(){
-	myship.attackAlien(alienships);
+	if (playing){
+		myship.attackAlien(alienships);
+		if (alienships == 0){
+			playing = false;
+		}
+	}
+	
 	
 });
 
