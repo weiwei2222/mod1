@@ -3,7 +3,7 @@
 const attackbtnEl = document.querySelector('.attackbtn')
 const retreatbtnEl = document.querySelector('.retreatbtn')
 
-class Ship {
+class Ship{
 	constructor(){
 		this.hull = 20;
 		this.firepower = 5;
@@ -11,13 +11,10 @@ class Ship {
 	}
 	attackAlien(){
 		if (Math.random() < this.accuracy){
-			console.log('You are attacking alien!');
+			// Alienship.allienHull() = Alienship.allienHull() - this.firepower;
+			console.log(`You are attacking alien!`);
 		}else{
-			console.log('You got hit by alien!');
-			this.hull = this.hull - Alienships.firepower;
-			if (this.hull <= 0){
-				console.log('Your ship is destroyed.');
-			}
+			console.log('You missed');
 		}
 	}
 }
@@ -27,6 +24,9 @@ class Alienship{
 		this.hull = Math.floor(Math.random() * 4) + 3;
 		this.firepower = Math.floor(Math.random() * 3) + 2;
 		this.accuracy = (Math.floor(Math.random() * 3) + 6) / 10;
+	}
+	allienHull(){
+		return this.hull;
 	}
 	attackShip(){
 		if (Math.random() > this.accuracy){
@@ -41,9 +41,15 @@ class Alienship{
 	}
 }
 
-
-
-const myship = new Ship();
-const alienship = new Alienship();
+const myship = new Ship()
+const alienship = new Alienship()
 myship.attackAlien()
 alienship.attackShip()
+
+// attackbtnEl.addEventListener('click',function(){
+
+// })
+
+
+
+
