@@ -4,15 +4,23 @@ const attackbtnEl = document.querySelector('.attackbtn')
 const retreatbtnEl = document.querySelector('.retreatbtn')
 
 class Ship{
-	constructor(){
+	constructor(name){
+		this.name = name;
 		this.hull = 20;
 		this.firepower = 5;
 		this.accuracy = 0.7;
 	}
-	attackAlien(){
+	attackAlien(alienships){
 		if (Math.random() < this.accuracy){
-			// Alienship.allienHull() = Alienship.allienHull() - this.firepower;
-			console.log(`You are attacking alien!`);
+			for (let i = 0; i < alienships.length; i ++){
+				alienships[i].hull = alienships[i].hull - this.firepower;
+				console.log(alienships[0]);
+				console.log(`You are attacking alien! Alien hull is ${alienships[i].hull}`);
+			}
+			
+			if (this.hull <= 0){
+				console.log('You lost game.')
+			}
 		}else{
 			console.log('You missed');
 		}
@@ -25,13 +33,10 @@ class Alienship{
 		this.firepower = Math.floor(Math.random() * 3) + 2;
 		this.accuracy = (Math.floor(Math.random() * 3) + 6) / 10;
 	}
-	allienHull(){
-		return this.hull;
-	}
-	attackShip(){
+	attackShip(myship){
 		if (Math.random() > this.accuracy){
-			console.log('You got hit by alien!');
-			this.hull = this.hull - Ship.firepower;
+			myship.hull = myship.hull - this.firepower;
+			console.log(`You got hit by alien!Your ship hull is ${myship.hull}.`);
 			if (this.hull <= 0){
 				console.log('Alien ship is destroyed.');
 			}
@@ -41,10 +46,16 @@ class Alienship{
 	}
 }
 
-const myship = new Ship()
-const alienship = new Alienship()
-myship.attackAlien()
-alienship.attackShip()
+const myship = new Ship('USS Assembly')
+const alienships = [];
+for (let i = 0; i < 6; i ++){
+	const alien = new Alienship();
+	alienships.push(alien)
+}
+
+myship.attackAlien(alienships)
+
+
 
 // attackbtnEl.addEventListener('click',function(){
 
