@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;} 
 fieldset, img, input, button {
     border: none;
@@ -5,21 +7,51 @@ fieldset, img, input, button {
     margin: 0;
     outline-style: none;
 }
-.main{
-    width: 500px;
-    height: 200px;
-    margin: 0px auto;
-    padding: 50px 0px;
-    font-size: larger;
-    line-height: 40px;
-    color: #6c1717;
-    background-color: #dadada;
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #0e0d36 0%, #70289c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
 }
 
 .attackbtn{
     background-color: #7bc3b0;
     border-radius: 10px;
     font-size: 16px;
+    cursor: pointer;
 }
 .attackbtn a{
     padding: 10px 20px;
@@ -52,7 +84,15 @@ fieldset, img, input, button {
     background-color: #2c3286;
     border-radius: 10px;
 }
-
+.show{
+    font-size: 5rem;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: auto;
+}
 .show1{
-
+    font-size: 5rem;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: auto;
 }

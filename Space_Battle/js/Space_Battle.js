@@ -44,7 +44,7 @@ class Alienship{
 	attackShip(myship){
 		if (Math.random() < this.accuracy){
 			myship.hull = myship.hull - this.firepower;
-			show1El.textContent = `You got hit by alien!Your ship hull is ${myship.hull}.`;
+			show1El.textContent = `You got hit by alien!Your ship hull is ${myship.hull} now.`;
 		}else{
 			show1El.textContent = `You got hit by alien!But alien missed.`;
 		}
@@ -63,6 +63,7 @@ attackbtnEl.addEventListener("click",function(){
 		myship.attackAlien(alienshipsArray);
 		if (alienshipsArray == 0 || myship.hull <= 0){
 			playing = false;
+			showEl.textContent = 'You win!';
 		}
 	}
 	
