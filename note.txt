@@ -57,3 +57,8 @@ a.forEach(function(color) {
 // let c = 5 % "2";     // 1 number
 // let d = "hello" % 2; //NaN
 // console.log(a,b,c,d) 
+
+
+Math.random() 是得到一个0-1之间随机数。
+Math.floor(i) 是得到一个数的整数部分
+Math.random()*4的值是(0-4)之间的随机数
