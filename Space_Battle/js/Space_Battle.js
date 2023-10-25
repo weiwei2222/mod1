@@ -20,11 +20,10 @@ class Ship{
 			showEl.textContent = `You are attacking alien! Alien hull is ${alienShip[0].hull} now.`;
 			if (alienShip[0].hull <= 0){
 				show1El.textContent = 'This Alien ship is destroyed.';
-				alienships.splice(alienships[0],1,);
-				console.log(alienships);
-			}else{
-				// setTimeout(alienships[0].attackShip(myship), 2000);
-				alienships[0].attackShip(myship);
+				alienshipsArray.splice(alienshipsArray[0],1,);
+				console.log(alienshipsArray);
+			}else if (alienShip[0].hull > 0){
+				alienShip[0].attackShip(this);
 			}
 		}else{
 			showEl.textContent = 'You missed!';
@@ -42,29 +41,29 @@ class Alienship{
 		this.accuracy = (Math.floor(Math.random() * 3) + 6) / 10;
 	}
 	attackShip(myship){
-		if (Math.random() > this.accuracy){
+		if (Math.random() < this.accuracy){
 			myship.hull = myship.hull - this.firepower;
 			show1El.textContent = `You got hit by alien!Your ship hull is ${myship.hull}.`;
+		}else{
+			show1El.textContent = `You got hit by alien!But alien missed.`;
 		}
 	}
 }
-
 const myship = new Ship('USS Assembly')
-const alienships = [];
+const alienshipsArray = [];
 for (let i = 0; i < 6; i ++){
 	const alien = new Alienship();
-	alienships.push(alien);
+	alienshipsArray.push(alien);
 }
 
 let playing = true;
 attackbtnEl.addEventListener("click",function(){
 	if (playing){
-		myship.attackAlien(alienships);
-		if (alienships == 0){
+		myship.attackAlien(alienshipsArray);
+		if (alienshipsArray == 0 || myship.hull <= 0){
 			playing = false;
 		}
 	}
-	
 	
 });
 
