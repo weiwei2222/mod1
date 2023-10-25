@@ -17,3 +17,28 @@ textEl.style.textAlign = 'center';
 textEl.style.color = 'red';
 coolEl.style.backgroundColor = '#666';
 
+console.log(coolEl.getAttribute('class'));
+console.log(coolEl.hasAttribute('id'));
+
+
+let aTag = document.createElement('a');
+aTag.textContent = "visit Google";
+document.body.appendChild(aTag);
+aTag.setAttribute('href','https://www.google.com/');
+
+coolEl.classList.add('change');
+textEl.classList.contains('change2');
+titleEl.classList.toggle('change3')
+
+let commentList = document.getElementsByClassName('comment');
+console.log(commentList)
+
+let listEl = document.querySelectorAll('li');
+for(let commentEl of listEl) {
+	console.log(commentEl);
+}
+listEl.forEach((listEl) => console.log(listEl));
+
+for(let commentEl of listEl) {
+	commentEl.style.fontSize = '30px';
+}

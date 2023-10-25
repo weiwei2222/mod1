@@ -4,3 +4,19 @@
     box-sizing: inherit;
   }
   
+
+  .change{
+    font-size: 30px;
+    color: blueviolet;
+  }
+
+  .change2{
+    font-size: 30px;
+    color: rgb(27, 6, 46);
+    background-color: brown;
+  }
+  .change3{
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100px;
+  }
