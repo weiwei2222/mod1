@@ -31,6 +31,7 @@ class Ship{
 	}
 	retreat(){
 		showEl.textContent = 'You retreat!';
+		playing = false;
 	}
 }
 
