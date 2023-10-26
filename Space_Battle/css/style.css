@@ -7,46 +7,107 @@ fieldset, img, input, button {
     margin: 0;
     outline-style: none;
 }
-
+/*----------------------------*/
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
 body {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
-  height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #0e0d36 0%, #70289c 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: #333;
+    background-image: linear-gradient(to top left, #1a124c 0%, #2b3672 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* LAYOUT */
+  
+  /* LAYOUT */
 main {
-  position: relative;
-  width: 100rem;
-  height: 60rem;
-  background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(200px);
-  filter: blur();
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-  overflow: hidden;
-  display: flex;
+    position: relative;
+    width: 100rem;
+    height: 60rem;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(200px);
+    filter: blur();
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
 }
-
+  
 .player {
-  flex: 50%;
-  padding: 9rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.75s;
+    flex: 50%;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.75s;
+}
+  
+  /* ELEMENTS */
+.name {
+    position: relative;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+  
+.score {
+    font-weight: 300;
+    color: #c7365f;
+    margin-bottom: auto;
+  }
+
+.player--active .name {
+    font-weight: 700;
+  }
+  .player--active .score {
+    font-weight: 400;
+  }
+  
+  .player--active .current {
+    opacity: 1;
+  }
+  
+.current {
+    background-color: #41429e;
+    opacity: 0.8;
+    border-radius: 9px;
+    color: #fff;
+    width: 65%;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.75s;
+    margin-bottom: 20px;
+}
+  
+.current-label {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    color: #ddd;
+}
+  
+.current-score {
+    font-size: 3.5rem;
 }
 
+  
+.hidden{
+    display: none;
+}
+
+
+
+
+
+/*-----------------------------*/
 .attackbtn{
     background-color: #7bc3b0;
     border-radius: 10px;
@@ -85,14 +146,18 @@ main {
     border-radius: 10px;
 }
 .show{
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 300;
     color: #ccc;
     margin-bottom: auto;
 }
 .show1{
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 300;
     color: #ccc;
     margin-bottom: auto;
+}
+.img{
+    width: 60px;
+    height: 60px;
 }

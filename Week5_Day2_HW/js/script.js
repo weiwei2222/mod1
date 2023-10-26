@@ -75,3 +75,7 @@ topMenuEl.addEventListener('click',function(event){
 })
 
 // Task 5.4
+// for (let i = 0; i < topMenuLinks.length; i++) {
+//   topMenuLinks[i].classList.remove("active");
+// }
+console.log(topMenuLinks)
