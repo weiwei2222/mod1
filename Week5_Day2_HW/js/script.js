@@ -59,8 +59,19 @@ subMenuEl.style.top = '0';
 // Task 5.1
 const topMenuLinks = topMenuEl.getAttribute('a');
 let showingSubMenu =true;
-// Task 5.2
+// Task 5.2  5.3
 topMenuEl.addEventListener('click',function(event){
   event.preventDefault();
-  console.log(topMenuEl.textContent);
+  if (event.target.tagName !== 'a'){
+    return;
+  }
+  console.log(event.target.textContent);
+  if (event.target.classList.contains("active")) {
+    event.target.classList.remove("active");
+    showingSubMenu = false;
+    subMenuEl.style.top = "0";
+    return;
+  }
 })
+
+// Task 5.4
