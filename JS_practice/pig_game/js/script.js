@@ -60,7 +60,7 @@ btnRoll.addEventListener("click",function(){
         let dicnumber = Math.trunc(Math.random() * 6 +1);
         console.log(dicnumber)
         dicPicture.classList.remove("hidden")
-       dicPicture.src = `dice-${dicnumber}.png`;
+       dicPicture.src = `img/dice-${dicnumber}.png`;
        if (dicnumber !== 1 ){
             currentscore += dicnumber;
             player_currentscore[activePlayer].textContent = currentscore;
