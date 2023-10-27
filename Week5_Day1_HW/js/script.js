@@ -19,7 +19,7 @@ mainEl.classList.add('flex-ctr');
 
 const topMenuEl = document.getElementById('top-menu');
 
-topMenuEl.style.width = '100%';
+topMenuEl.style.height = '100%';
 
 topMenuEl.style.backgroundColor = 'var(--top-menu-bg)';
 

@@ -6,6 +6,8 @@ const showEl = document.querySelector('.show');
 const show1El = document.querySelector('.show1');
 const myhull = document.getElementById('current--0');
 const alienhull = document.getElementById('current--1');
+let playing = true;
+let current = 0; 
 
 class Ship{
 	constructor(name){
@@ -14,18 +16,12 @@ class Ship{
 		this.firepower = 5;
 		this.accuracy = 0.7;
 	}
-	attackAlien(alienShip){
+	attackAlien(alien){
+		console.log(alien.hull)
 		if (Math.random() < this.accuracy){
-			alienShip[0].hull = alienShip[0].hull - this.firepower;
+			alien.hull -= this.firepower;
 			showEl.textContent = `You are attacking alien!`;
-			alienhull.textContent = `${alienShip[0].hull}`;
-			if (alienShip[0].hull <= 0){
-				show1El.textContent = 'This Alien ship is destroyed.';
-				alienshipsArray.splice(alienshipsArray[0],1,);
-				console.log(alienshipsArray);
-			}else if (alienShip[0].hull > 0){
-				alienShip[0].attackShip(this);
-			}
+			alienhull.textContent = `${alien.hull}`;
 		}else{
 			showEl.textContent = 'You missed!';
 		}
@@ -33,6 +29,9 @@ class Ship{
 	retreat(){
 		showEl.textContent = 'You retreat!Game over!';
 		playing = false;
+	}
+	shipdie(){
+		return this.hull <=0;
 	}
 }
 
@@ -44,34 +43,48 @@ class Alienship{
 	}
 	attackShip(myship){
 		if (Math.random() < this.accuracy){
-			myship.hull = myship.hull - this.firepower;
+			myship.hull -= this.firepower;
 			show1El.textContent = `You got hit by alien!`;
 			myhull.textContent = `${myship.hull}`
 		}else{
 			show1El.textContent = `You got hit by alien!But alien missed.`;
 		}
 	}
+	aliendie(){
+		return this.hull <=0;
+	}
 }
 const myship = new Ship('USS Assembly')
 const alienshipsArray = [];
+const imgList = [];
 for (let i = 0; i < 6; i ++){
 	const alien = new Alienship();
 	alienshipsArray.push(alien);
 }
-
-let playing = true;
 myhull.textContent = myship.hull;
 alienhull.textContent = alienshipsArray[0].hull;
-attackbtnEl.addEventListener("click",function(){
-	if (playing){
-		myship.attackAlien(alienshipsArray);
-		if (alienshipsArray == 0 || myship.hull <= 0){
-			playing = false;
-			showEl.textContent = 'You win!';
+
+const game = function(){
+		if (playing){
+			myship.attackAlien(alienshipsArray[current]);
+			console.log(alienshipsArray[current]);
+			if (alienshipsArray[current].hull <= 0){
+				alienshipsArray[current].aliendie();
+				current ++;
+			}else if (alienshipsArray[current].hull > 0){
+				alienshipsArray[current].attackShip(myship);
+			}
+
+			if (alienshipsArray.length = 0 || myship.hull <= 0){
+				playing = false;
+				showEl.textContent = 'You win!';
+			}
 		}
-	}
-	
-});
+}
+
+
+
+attackbtnEl.addEventListener("click",game);
 
 retreatbtnEl.addEventListener('click',function(){
 	myship.retreat();
