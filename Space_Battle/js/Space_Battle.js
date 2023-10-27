@@ -24,6 +24,7 @@ class Ship{
 			alienhull.textContent = `${alien.hull}`;
 		}else{
 			showEl.textContent = 'You missed!';
+			alien.attackShip(this);
 		}
 	}
 	retreat(){
@@ -67,15 +68,14 @@ alienhull.textContent = alienshipsArray[0].hull;
 const game = function(){
 		if (playing){
 			myship.attackAlien(alienshipsArray[current]);
+			current ++ ;
 			console.log(alienshipsArray[current]);
 			if (alienshipsArray[current].hull <= 0){
 				alienshipsArray[current].aliendie();
-				current ++;
 			}else if (alienshipsArray[current].hull > 0){
 				alienshipsArray[current].attackShip(myship);
 			}
-
-			if (alienshipsArray.length = 0 || myship.hull <= 0){
+			if (current >= 5 || myship.hull <= 0){
 				playing = false;
 				showEl.textContent = 'You win!';
 			}
