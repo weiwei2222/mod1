@@ -75,7 +75,70 @@ topMenuEl.addEventListener('click',function(event){
 })
 
 // Task 5.4
-// for (let i = 0; i < topMenuLinks.length; i++) {
-//   topMenuLinks[i].classList.remove("active");
-// }
-console.log(topMenuLinks)
+for (let i = 0; i < topMenuLinks.length; i++) {
+  topMenuLinks[i].classList.remove("active");
+}
+// //5.5
+event.target.classList.add("active");
+
+// task 5.6
+const anchorName = event.target.textContent;
+const menuLink = menuLinks.find((link) => {
+  //find is like map, goes through everything in the array
+  return link.text === anchorName; // returns boolean
+});
+
+if (menuLink === undefined) {
+  return;
+}
+
+if (menuLink.subLinks) {
+  showingSubMenu = true;
+} else {
+  showingSubMenu = false;
+}
+
+//task 5.7 +5.8
+const buildSubMenu = (sublinks) => {
+  subMenuEl.innerHTML = "";
+  for (let i = 0; i < sublinks.length; i++) {
+    const newAnchor = document.createElement("a");
+    newAnchor.setAttribute("href", sublinks[i].href);
+    newAnchor.textContent = sublinks[i].text;
+    subMenuEl.append(newAnchor);
+  }
+};
+
+if (showingSubMenu) {
+  buildSubMenu(menuLink.subLinks);
+  subMenuEl.style.top = "100%";
+} else {
+  subMenuEl.style.top = "0";
+}
+
+//task 6.4
+if (anchorName === "about") {
+  mainEl.innerHTML = "<h1>about</h1>";
+};
+
+
+// Task 6.0
+subMenuEl.addEventListener("click", (event) => {
+event.preventDefault();
+if (event.target.tagName !== "A") {
+  return;
+}
+console.log(event.target.textContent);
+
+// task 6.1
+showingSubMenu = false;
+subMenuEl.style.top = "0";
+
+// task 6.2
+for (let i = 0; i < topMenuLinks.length; i++) {
+  topMenuLinks[i].classList.remove("active");
+}
+
+// task 6.3
+mainEl.innerHTML = `<h1>${event.target.textContent}</h1>`;
+});
