@@ -73,16 +73,18 @@ const game = function(){
 			if (alienshipsArray[current].hull <= 0){
 				show1El.textContent = `One alien ship destroyed.`;
 				imgList[current].classList.add('hidden');
-				console.log(current);
 				current ++;
 			}else if (alienshipsArray[current].hull > 0){
 				show1El.textContent = `One alien ship survives.`;
 				alienshipsArray[current].attackShip(myship);
 			}
-			if (current > 5 || myship.hull <= 0){
+			if (current > 5 && myship.hull > 0){
 				playing = false;
 				showEl.textContent = 'You win!';
 				show1El.textContent = 'All alien ships are destroyed.'
+			}else if (current > 5 && myship.hull <= 0){
+				playing = false;
+				showEl.textContent = 'You lost!';
 			}
 		}
 }
