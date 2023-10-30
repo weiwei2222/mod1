@@ -1,6 +1,4 @@
-'use strict';
 
-// Menu data structure
 var menuLinks = [
   {text: 'about', href: '/about'},
   {text: 'catalog', href: '#', subLinks: [
@@ -43,102 +41,121 @@ for (let links of menuLinks){
   newEl.textContent = links.text;
   topMenuEl.appendChild(newEl);
 }
-//  <a href="">test</a>
+
 
 
 // Week5 Day2 HW
 // Task 4.0
-const subMenuEl = document.getElementById('sub-menu');
+const subMenuEl = document.querySelector("#sub-menu");
+
 subMenuEl.style.height = '100%';
 subMenuEl.style.backgroundColor = 'var(--sub-menu-bg)';
 subMenuEl.classList.add('flex-around');
-
-subMenuEl.style.position = 'absolute';
+subMenuEl.style.position = "absolute";
 subMenuEl.style.top = '0';
 
-// Task 5.1
-const topMenuLinks = topMenuEl.getAttribute('a');
-let showingSubMenu =true;
-// Task 5.2  5.3
-topMenuEl.addEventListener('click',function(event){
-  event.preventDefault();
-  if (event.target.tagName !== 'a'){
+//Task 5.1
+const topMenuLinks = topMenuEl.querySelectorAll("a");
+let showingSubMenu = false;
+
+//Task 5.2
+topMenuEl.addEventListener("click", function (e){
+  e.preventDefault();
+  if (e.target.tagName!="A"){
     return;
   }
-  console.log(event.target.textContent);
-  if (event.target.classList.contains("active")) {
-    event.target.classList.remove("active");
+  
+  console.log(e.target.textContent);  
+  
+//Task 5.3
+if (e.target.classList.contains("active")){
+    console.log(e.target.classList);
+    e.target.classList.remove("active");
+    console.log(e.target.classList);
     showingSubMenu = false;
-    subMenuEl.style.top = "0";
+    subMenuEl.style.top = 0;
     return;
   }
-})
-
-// Task 5.4
-for (let i = 0; i < topMenuLinks.length; i++) {
-  topMenuLinks[i].classList.remove("active");
-}
-// //5.5
-event.target.classList.add("active");
-
-// task 5.6
-const anchorName = event.target.textContent;
-const menuLink = menuLinks.find((link) => {
-  //find is like map, goes through everything in the array
-  return link.text === anchorName; // returns boolean
-});
-
-if (menuLink === undefined) {
-  return;
+console.log(topMenuLinks);
+  
+//Task 5.4
+for (i=0; i<topMenuLinks.length; i++){
+      topMenuLinks[i].classList.remove("active");
 }
 
-if (menuLink.subLinks) {
-  showingSubMenu = true;
-} else {
-  showingSubMenu = false;
+//Task 5.5
+e.target.classList.add('active');
+
+//Task 5.6
+if(e.target.textContent!="about"){
+    showingSubMenu = true;
+    console.log('showingSubMenu: ' + showingSubMenu);
+}else{
+    showingSubMenu = false;
+    console.log('showingSubMenu: ' + showingSubMenu);
 }
 
-//task 5.7 +5.8
-const buildSubMenu = (sublinks) => {
-  subMenuEl.innerHTML = "";
-  for (let i = 0; i < sublinks.length; i++) {
-    const newAnchor = document.createElement("a");
-    newAnchor.setAttribute("href", sublinks[i].href);
-    newAnchor.textContent = sublinks[i].text;
-    subMenuEl.append(newAnchor);
+
+let linksObject;
+if(e.target.textContent=="catalog"){
+    linksObject = menuLinks[1]['subLinks'];
+}else if(e.target.textContent=="orders"){
+    linksObject = menuLinks[2]['subLinks'];
+}else if(e.target.textContent=="account"){
+    linksObject = menuLinks[3]['subLinks'];
+}
+
+//Task 5.7
+if (showingSubMenu == true){
+    buildSubMenu(linksObject);
+    subMenuEl.style.top = '100%';
+}else{
+    subMenuEl.style.top = '0';
+
+}
+
+//Task 5.8
+function buildSubMenu(linksObject){
+    //Clears the contents of subMenuEl
+    subMenuEl.innerHTML = "";
+   
+   for(i=0; i<linksObject.length; i++){ 
+   const subLink = document.createElement("a");
+   subLink.href = linksObject[i]['href'];
+   subLink.textContent = linksObject[i]['text'];
+   console.log(subLink);
+   subMenuEl.append(subLink);
+    }
+
   }
-};
 
-if (showingSubMenu) {
-  buildSubMenu(menuLink.subLinks);
-  subMenuEl.style.top = "100%";
-} else {
-  subMenuEl.style.top = "0";
+//Task 6.4
+if (e.target.textContent=="about"){
+    mainEl.innerHTML = "<h1> About </h1>";  
+    }
+} 
+) 
+//Task 6.0
+subMenuEl.addEventListener('click', function(e){
+      e.preventDefault();
+      if (e.target.tagName!="A"){
+        return;
 }
-
-//task 6.4
-if (anchorName === "about") {
-  mainEl.innerHTML = "<h1>about</h1>";
-};
-
-
-// Task 6.0
-subMenuEl.addEventListener("click", (event) => {
-event.preventDefault();
-if (event.target.tagName !== "A") {
-  return;
-}
-console.log(event.target.textContent);
-
-// task 6.1
+console.log(e.target.textContent);  
+  
+//Task 6.1
 showingSubMenu = false;
-subMenuEl.style.top = "0";
 
-// task 6.2
-for (let i = 0; i < topMenuLinks.length; i++) {
-  topMenuLinks[i].classList.remove("active");
+
+subMenuEl.style.top = 0;
+
+//Task 6.2
+for (i=0; i<topMenuLinks.length; i++){
+    topMenuLinks[i].classList.remove("active");
 }
 
-// task 6.3
-mainEl.innerHTML = `<h1>${event.target.textContent}</h1>`;
-});
+//Task 6.3
+mainEl.innerHTML = "<h1>" + e.target.textContent + "</h1>";
+ //Task 6.4
+
+  });
