@@ -1,0 +1,38 @@
+Free photos
+https://www.pexels.com/
+https://unsplash.com/
+https://pixabay.com/
+
+
+CSS grid
+https://www.w3schools.com/css/css_grid_container.asp
+
+CSS transform 3D 
+https://www.w3schools.com/cssref/css3_pr_transform.php
+
+CSS perspective Property
+https://www.w3schools.com/cssref/css3_pr_perspective.php
+
+JavaScript Array Methods
+https://www.w3schools.com/js/js_array_methods.asp
+
+JavaScript Array forEach()
+https://www.w3schools.com/jsref/jsref_foreach.asp
+
+HTML Dom Style order Property
+https://www.w3schools.com/jsref/prop_style_order.asp
+
+JavaScript Random
+https://www.w3schools.com/js/js_random.asp
+
+HTML data-* Attributes
+https://www.w3schools.com/tags/att_global_data.asp
+
+JavaScript html dom
+https://www.runoob.com/js/js-ex-dom.html
+setInterval()
+https://www.runoob.com/w3cnote/js-timer.html
+
+idea:
+have 16 cards and 8 pairs of cards are the same
+
