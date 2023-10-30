@@ -89,4 +89,12 @@ button {
 }
 .front-face {
     transform: rotateY(180deg);
-  }
+}
+.controls{
+    margin: 18px auto;
+}
+
+.stats{
+    float: right;
+    font-size: 1rem;
+}
