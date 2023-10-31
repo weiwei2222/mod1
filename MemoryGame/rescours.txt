@@ -33,6 +33,13 @@ https://www.runoob.com/js/js-ex-dom.html
 setInterval()
 https://www.runoob.com/w3cnote/js-timer.html
 
+onload Event
+https://www.w3schools.com/jsref/event_onload.asp
+
 idea:
 have 16 cards and 8 pairs of cards are the same
 
+IIFE
+https://www.runoob.com/angularjs2/angularjs2-javascript-setup.html
+(function(app) {
+})(window.app || (window.app = {}));

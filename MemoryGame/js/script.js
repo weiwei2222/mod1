@@ -4,6 +4,7 @@ const cards = document.querySelectorAll('.memory-card');
 const movesEl = document.getElementById('moves');
 const timer = document.getElementById('timer');
 const reset = document.getElementById('reset');
+document.body.onload = shuffle();
 
 let checkFlip = false;
 let firstCard, secondCard;
@@ -20,12 +21,7 @@ function resetGame(){
   movesEl.textContent = moves;
   seconds = 0;
   minutes = 0;
-  (function shuffle(){
-    cards.forEach(card => {
-      let randomNum = Math.floor(Math.random() *16);
-      card.style.order = randomNum;
-    } )
-  })()
+  shuffle();
 }
 
 function reset2Cords(){
@@ -46,6 +42,7 @@ function flipCard() {
   secondCard = this;
   checkFlip = false;
   moves ++;
+  console.log(moves);
   movesEl.textContent = moves;
   checkMatch()
 }
@@ -76,12 +73,18 @@ function unflipCards() {
   }, 500);
 }
 
-(function shuffle(){
+function shuffle(){
   cards.forEach(card => {
     let randomNum = Math.floor(Math.random() *16);
     card.style.order = randomNum;
   } )
-})()
+}
+
+
+while(moves >= 1){
+    console.log(moves);
+    setInterval(updateTimer, 1000);
+}// ??????
 
 function updateTimer(){
   seconds ++;
@@ -91,7 +94,8 @@ function updateTimer(){
   }
   timer.textContent = `${minutes} : ${seconds}`;
 }
-// setInterval(updateTimer, 1000)
+// setInterval(updateTimer, 1000);
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 // for (let i = 0; i <cards.length; i ++){
