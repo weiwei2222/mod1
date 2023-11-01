@@ -1,4 +1,4 @@
-<a class="heading-link" href="#instructions">Instructions</a>
+Instructions
 
 There are 16 animal cards. But they are in hidden in front card. When you click on a card, the card will flip over and you can see different animal cards. If the two cards are the same, then the two cards will be displayed. If the two cards are different, the cards will be flipped back. If you find 8 pairs of cards, then the game is over.
 
