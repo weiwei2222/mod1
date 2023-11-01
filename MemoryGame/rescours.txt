@@ -3,8 +3,6 @@ https://www.pexels.com/
 https://unsplash.com/
 https://pixabay.com/
 
-idea:
-have 16 cards and 8 pairs of cards are the same
 
 CSS grid
 https://www.w3schools.com/css/css_grid_container.asp
@@ -38,10 +36,5 @@ https://www.runoob.com/w3cnote/js-timer.html
 onload Event
 https://www.w3schools.com/jsref/event_onload.asp
 
-IIFE
-https://www.runoob.com/angularjs2/angularjs2-javascript-setup.html
-(function(app) {
-})(window.app || (window.app = {}));
-
-HTML onload Attribute  document.body.onload = shuffle();
+HTML onload Attribute
 https://www.w3schools.com/tags/att_onload.asp

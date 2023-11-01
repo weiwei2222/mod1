@@ -19,7 +19,6 @@ function resetGame(){
   cards.forEach(card => card.classList.remove('flip'));
   cards.forEach(card => card.addEventListener('click', flipCard));
   match = 0;
-  console.log(match);
   moves = 0;
   movesEl.textContent = moves;
   clearInterval(timer);
@@ -97,7 +96,4 @@ function updateTimer(){
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
-// for (let i = 0; i <cards.length; i ++){
-//   cards[i].addEventListener('click', flipCard);
-// }
 reset.addEventListener('click',resetGame)
