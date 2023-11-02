@@ -1,6 +1,6 @@
 'use strict';
 
-const cards = document.querySelectorAll('.memory-card');
+const cardsEL = document.querySelectorAll('.memory-card');
 const movesEl = document.getElementById('moves');
 const timerEl = document.getElementById('timer');
 const reset = document.getElementById('reset');
@@ -16,8 +16,8 @@ let match = 0;
 document.body.onload = shuffle();
 // reset the game
 function resetGame(){
-  cards.forEach(card => card.classList.remove('flip'));
-  cards.forEach(card => card.addEventListener('click', flipCard));
+  cardsEL.forEach(card => card.classList.remove('flip'));
+  cardsEL.forEach(card => card.addEventListener('click', flipCard));
   match = 0;
   moves = 0;
   movesEl.textContent = moves;
@@ -81,7 +81,7 @@ function unflipCards() {
 }
 // shuffle all cards. and change all cards order.
 function shuffle(){
-  cards.forEach(card => {
+  cardsEL.forEach(card => {
     let randomNum = Math.floor(Math.random() *16);
     card.style.order = randomNum;
   } );
@@ -96,5 +96,5 @@ function updateTimer(){
   timerEl.textContent = `${minutes} : ${seconds}`;
 }
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+cardsEL.forEach(card => card.addEventListener('click', flipCard));
 reset.addEventListener('click',resetGame)
