@@ -22,6 +22,3 @@ https://github.com/weiwei2222/mod1/tree/master/Week5_Day2_HW
 
 Space_Battle
 https://github.com/weiwei2222/mod1/tree/master/Space_Battle
-
-Project - Memory Card Game
-https://github.com/weiwei2222/mod1/tree/master/MemoryGame
