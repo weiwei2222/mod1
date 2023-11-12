@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Arrays & Control flow
 
@@ -18,7 +18,6 @@
 // const reverseMyarray = ourClass.reverse();
 // console.log(reverseMyarray)
 
-
 // Write an if ... else if ... elsestatement:
 // console.log()little numberif the number entered is less than 5.
 // If the number entered is more than 10, log big number.
@@ -32,22 +31,21 @@
 //     console.log("monkey")
 // }
 
+// const kristynsCloset = [
+//   "left shoe",
+//   "cowboy boots",
+//   "right sock",
+//   "Per Scholas hoodie",
+//   "green pants",
+//   "yellow knit hat",
+//   "marshmallow peeps",
+// ];
+// console.log(`Kristyn is rocking that ${kristynsCloset[2]} today!`);
+// console.log("Kristyn is rocking that" + kristynsCloset[2] + "today!");
 
-const kristynsCloset = [
-    "left shoe",
-    "cowboy boots",
-    "right sock",
-    "Per Scholas hoodie",
-    "green pants",
-    "yellow knit hat",
-    "marshmallow peeps"
-  ];
-console.log(`Kristyn is rocking that ${kristynsCloset[2]} today!`)
-console.log("Kristyn is rocking that" + kristynsCloset[2] + "today!")
-
-kristynsCloset.splice(6,0,"raybans")
-kristynsCloset[5] = "stained knit hat";
-console.log(kristynsCloset)
+// kristynsCloset.splice(6, 0, "raybans");
+// kristynsCloset[5] = "stained knit hat";
+// console.log(kristynsCloset);
 
 // Thom's closet is more complicated. Check out this nested data structure!!
 // const thomsCloset = [
@@ -71,3 +69,10 @@ console.log(kristynsCloset)
 // ];
 // thomsCloset.push("bracket notation");
 // console.log(thomsCloset)
+
+const mynum = [3, 5, 6, 2];
+const bb = 10;
+const cc = [...mynum, bb];
+const dd = [...cc, mynum];
+const [a, b, ...c] = mynum;
+console.log(dd);
