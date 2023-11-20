@@ -49,30 +49,44 @@
 
 // Thom's closet is more complicated. Check out this nested data structure!!
 // const thomsCloset = [
-//     [
-//       // These are Thom's shirts
-//       "grey button-up",
-//       "dark grey button-up",
-//       "light blue button-up",
-//       "blue button-up",
-//     ],[
-//       // These are Thom's pants
-//       "grey jeans",
-//       "jeans",
-//       "PJs"
-//     ],[
-//       // Thom's accessories
-//       "wool mittens",
-//       "wool scarf",
-//       "raybans"
-//     ]
+//   [
+//     // These are Thom's shirts
+//     "grey button-up",
+//     "dark grey button-up",
+//     "light blue button-up",
+//     "blue button-up",
+//   ],
+//   [
+//     // These are Thom's pants
+//     "grey jeans",
+//     "jeans",
+//     "PJs",
+//   ],
+//   [
+//     // Thom's accessories
+//     "wool mittens",
+//     "wool scarf",
+//     "raybans",
+//   ],
 // ];
 // thomsCloset.push("bracket notation");
-// console.log(thomsCloset)
+// console.log(thomsCloset);
 
-const mynum = [3, 5, 6, 2];
+const mynum = ["3", "5", "6", 2, 9, 1];
 const bb = 10;
 const cc = [...mynum, bb];
 const dd = [...cc, mynum];
 const [a, b, ...c] = mynum;
-console.log(dd);
+// console.log(dd);
+
+for (let i = mynum.length - 2; i >= 0; i -= 2) {
+  mynum[i] = mynum[i] * 2;
+  console.log(mynum[i]);
+}
+
+let one = (mynum + "").replace(/\D+/g, "").split("");
+console.log(one);
+
+let d1 = "2009-8-1";
+let d1Arr = d1.split("-");
+console.log(d1Arr);
